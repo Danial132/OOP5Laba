@@ -1,0 +1,13 @@
+Console.Write("");
+            String s1 = Console.ReadLine();
+                if (s1.StartsWith("abc"))
+                    {
+                        s1 = s1.Replace("abc", "www");
+                        Console.WriteLine(s1);
+                    }
+                else
+                    {
+                        s1 += "zzz";
+                        Console.WriteLine(s1);
+                    }
+            Console.ReadLine();
