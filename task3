@@ -1,0 +1,27 @@
+        static void Main(string[] args)
+        {
+            string st = "aa";
+            char[] ntxt2 = st.Distinct().ToArray();
+            if (ntxt2.Length > 3)
+            {
+                st = st.Trim(new char[] { ntxt2[0], ntxt2[1], ntxt2[2] });
+            }
+            else
+            {
+                string letters = "abcdefghijklmnopqrstuvwxyz";
+                for (int i = 0; i < st.Length; i++)
+                {
+                    letters = letters.Trim(new char[] { ntxt2[i] });
+                }
+                while (st.Length <= 3)
+                {
+                    Random rdm = new Random();
+                    int index = rdm.Next(st.Length);
+                    int indexChar = rdm.Next(letters.Length);
+                    string insertChar = letters[indexChar].ToString();
+                    st = st.Insert(index, insertChar);
+
+                }
+            }
+            Console.ReadKey();
+        }
